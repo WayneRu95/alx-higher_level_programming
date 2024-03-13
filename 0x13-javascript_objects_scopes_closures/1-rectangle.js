@@ -1,9 +1,17 @@
 #!/usr/bin/node
+// module.exports = class Rectangle {
+//   constructor (w, h) {
+// this.width = w;
+// this.height = h;
+//   }
+// };
 
-const fs = require('fs');
-
-fs.writeFile(process.argv[2], process.argv[3], 'utf8', function (err) {
-  if (err) {
-    console.log(err);
+// OR
+class Rectangle {
+  constructor (w, h) {
+    this.width = w;
+    this.height = h;
   }
-});
+}
+
+module.exports = Rectangle;

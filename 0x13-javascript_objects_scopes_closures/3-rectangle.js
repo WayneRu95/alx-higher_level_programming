@@ -1,9 +1,19 @@
 #!/usr/bin/node
+class Rectangle {
+  constructor (w, h) {
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+    }
+  }
 
-const request = require('request');
-const starWarsUri = 'https://swapi-api.hbtn.io/api/films/'.concat(process.argv[2]);
+  print () {
+    for (let i = 0; i < this.height; i++) {
+      const temp = [];
+      for (let j = 0; j < this.width; j++) temp.push('X');
+      console.log(`${temp.join('')}`);
+    }
+  }
+}
 
-request(starWarsUri, function (_err, _res, body) {
-  body = JSON.parse(body);
-  console.log(body.title);
-});
+module.exports = Rectangle;

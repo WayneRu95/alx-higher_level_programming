@@ -1,7 +1,11 @@
 #!/usr/bin/node
+class Rectangle {
+  constructor (w, h) {
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+    }
+  }
+}
 
-const request = require('request');
-
-request(process.argv[2], function (_err, res) {
-  console.log('code:', res.statusCode); // Print the response status code if a response was received
-});
+module.exports = Rectangle;

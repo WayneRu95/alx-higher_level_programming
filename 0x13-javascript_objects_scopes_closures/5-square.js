@@ -1,12 +1,10 @@
 #!/usr/bin/node
+const Rectangle = require('./4-rectangle');
 
-const request = require('request');
-const fs = require('fs');
+class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
+  }
+}
 
-request(process.argv[2], function (_err, _res, body) {
-  fs.writeFile(process.argv[3], body, 'utf8', function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-});
+module.exports = Square;
